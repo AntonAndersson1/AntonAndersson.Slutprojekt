@@ -161,5 +161,8 @@ while True:
         Spelguide()
     if menyval == "4":
         break
+<<<<<<< HEAD
         
 
+=======
+>>>>>>> d076d6e58c42cc6d08118d93b2b05f634381c359
