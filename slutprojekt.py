@@ -6,29 +6,29 @@ import random
 def simuleraspel(tester):
     resultat = {"overlevde": 0, "dog": 0} #Detta samlar datan jag har får in genom att köra koden.
     
-    def valj_dorr(antal_dorrar):
+    def valj_dorr(antal_dorrar): #detat slumpar bara dörrar.
         farlig_dorr = random.randint(1,antal_dorrar)
         vald_dorr = random.randint(1, antal_dorrar)
         return vald_dorr != farlig_dorr
 
     for _ in range(tester): 
-        if not valj_dorr(3):
+        if not valj_dorr(3): #Detta gör så ifall man inte valde dörr 3 så dör man och ifall man valde dörr 3 så fortsätter man.
             resultat["dog"] += 1
             continue
-        riktning = random.choice(["höger", "vänster"])
-        if riktning == "vänster":
-            if not valj_dorr(2):
+        riktning = random.choice(["höger", "vänster"])#Detta gör så att man slumpar mellan höger och vänster
+        if riktning == "vänster": #Ifall riktningne är vänster händer detta.
+            if not valj_dorr(2): #Detta gör så att man dör spelar ingen roll vad du väljer.
                 resultat["dog"] += 1
                 continue
             else:
                 resultat["dog"] += 1
                 continue
-        elif riktning == "höger":
-            val = random.randint(1, 5)
-            if val == 1 or not valj_dorr(5):
+        elif riktning == "höger": #Ifall riktningen var höger.
+            val = random.randint(1, 5) #Detta slumpar mellan 1 till 5
+            if val == 1 or not valj_dorr(5): #Detta gör så ifall man inte väljer 5 så dör mna
                 resultat["dog"] += 1
                 continue
-            else:
+            else:#detta gör så ifall du valde 5 så överlever du
                 resultat["overlevde"] += 1
                 continue
 
